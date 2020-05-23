@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3466" started-at="2020-05-23T10:54:56 PDT" finished-at="2020-05-23T10:55:00 PDT">
+  <suite name="Default suite" duration-ms="2820" started-at="2020-05-23T11:47:29 PDT" finished-at="2020-05-23T11:47:31 PDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3466" started-at="2020-05-23T10:54:56 PDT" finished-at="2020-05-23T10:55:00 PDT">
+    <test name="Default test" duration-ms="2820" started-at="2020-05-23T11:47:29 PDT" finished-at="2020-05-23T11:47:31 PDT">
       <class name="bdd.JiraJsonFramework.JiraScratchNG">
-        <test-method status="PASS" signature="loginJira()[pri:0, instance:bdd.JiraJsonFramework.JiraScratchNG@3fd7a715]" name="loginJira" duration-ms="1904" started-at="2020-05-23T10:54:56 PDT" finished-at="2020-05-23T10:54:58 PDT">
+        <test-method status="PASS" signature="loginJira()[pri:0, instance:bdd.JiraJsonFramework.JiraScratchNG@3fd7a715]" name="loginJira" duration-ms="1764" started-at="2020-05-23T11:47:29 PDT" finished-at="2020-05-23T11:47:30 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginJira -->
-        <test-method status="PASS" signature="createIssue()[pri:1, instance:bdd.JiraJsonFramework.JiraScratchNG@3fd7a715]" name="createIssue" duration-ms="1041" started-at="2020-05-23T10:54:58 PDT" finished-at="2020-05-23T10:54:59 PDT">
+        <test-method status="PASS" signature="createIssue()[pri:1, instance:bdd.JiraJsonFramework.JiraScratchNG@3fd7a715]" name="createIssue" duration-ms="762" started-at="2020-05-23T11:47:30 PDT" finished-at="2020-05-23T11:47:31 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createIssue -->
-        <test-method status="PASS" signature="AddComment()[pri:2, instance:bdd.JiraJsonFramework.JiraScratchNG@3fd7a715]" name="AddComment" duration-ms="375" started-at="2020-05-23T10:54:59 PDT" finished-at="2020-05-23T10:55:00 PDT">
+        <test-method status="PASS" signature="AddComment()[pri:2, instance:bdd.JiraJsonFramework.JiraScratchNG@3fd7a715]" name="AddComment" duration-ms="79" started-at="2020-05-23T11:47:31 PDT" finished-at="2020-05-23T11:47:31 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddComment -->
-        <test-method status="PASS" signature="GetComment()[pri:3, instance:bdd.JiraJsonFramework.JiraScratchNG@3fd7a715]" name="GetComment" duration-ms="80" started-at="2020-05-23T10:55:00 PDT" finished-at="2020-05-23T10:55:00 PDT">
+        <test-method status="PASS" signature="GetComment()[pri:3, instance:bdd.JiraJsonFramework.JiraScratchNG@3fd7a715]" name="GetComment" duration-ms="86" started-at="2020-05-23T11:47:31 PDT" finished-at="2020-05-23T11:47:31 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetComment -->
+        <test-method status="PASS" signature="DeleteComment()[pri:4, instance:bdd.JiraJsonFramework.JiraScratchNG@3fd7a715]" name="DeleteComment" duration-ms="65" started-at="2020-05-23T11:47:31 PDT" finished-at="2020-05-23T11:47:31 PDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteComment -->
       </class> <!-- bdd.JiraJsonFramework.JiraScratchNG -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

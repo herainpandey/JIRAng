@@ -47,7 +47,6 @@ public class JiraScratchNG {
 		.then().log().all().assertThat().statusCode(201).extract().response().asString();
 	
     JsonPath js = new JsonPath(response);
-	id = js.getString("id");
 	key = js.getString("key");
 	
 	}
@@ -56,16 +55,21 @@ public class JiraScratchNG {
 	public void AddComment()
 	{
 		RestAssured.baseURI="http://localhost:8080";
-		given().header("Content-Type", "application/json")
+		String commentid=given().header("Content-Type", "application/json")
 		.body("{\r\n" + 
-				"    \"body\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper.\",\r\n" + 
+				"    \"body\": \"This is new comment\",\r\n" + 
 				"    \"visibility\": {\r\n" + 
 				"        \"type\": \"role\",\r\n" + 
 				"        \"value\": \"Administrators\"\r\n" + 
 				"    }\r\n" + 
 				"}")
 		.filter(session).when().post("/rest/api/2/issue/"+key+"/comment")
-		.then().log().all().assertThat().statusCode(201);
+		.then().log().all().assertThat().statusCode(201).extract().response().asString();
+		
+		 JsonPath js = new JsonPath(commentid);
+			id = js.getString("id");
+			
+		
 	}
 	
 	@Test(priority = 3)
@@ -79,5 +83,18 @@ public class JiraScratchNG {
 		 JsonPath js= new JsonPath(comment);
 		 System.out.println("Comment in Issue ID " +key+ " is " +js.getString("comments.body"));
 	}
+	
+	@Test(priority = 4)
+	public void DeleteComment()
+	{
+		//System.out.println("Bug Key:" +Bugid + "id" +id);
+		
+		RestAssured.baseURI="http://localhost:8080";
+		 String comment=given().header("Content-Type", "application/json")
+		.filter(session).when().delete("/rest/api/2/issue/"+key+"/comment/"+	id)
+		.then().log().all().assertThat().statusCode(204).extract().response().asString();
+		 
+	}
+	
 
 }
