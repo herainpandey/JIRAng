@@ -5,7 +5,7 @@
     <classes>
       <class name="bdd.JiraJsonFramework.JiraScratchNG">
         <methods>
-          <include name="createIssue"/>
+          <include name="GetComment"/>
         </methods>
       </class> <!-- bdd.JiraJsonFramework.JiraScratchNG -->
     </classes>

@@ -67,5 +67,17 @@ public class JiraScratchNG {
 		.filter(session).when().post("/rest/api/2/issue/"+key+"/comment")
 		.then().log().all().assertThat().statusCode(201);
 	}
+	
+	@Test(priority = 3)
+	public void GetComment()
+	{
+		RestAssured.baseURI="http://localhost:8080";
+		 String comment=given().header("Content-Type", "application/json")
+		.filter(session).when().get("/rest/api/2/issue/"+key+"/comment")
+		.then().log().all().assertThat().statusCode(200).extract().response().asString();
+		 
+		 JsonPath js= new JsonPath(comment);
+		 System.out.println("Comment in Issue ID " +key+ " is " +js.getString("comments.body"));
+	}
 
 }

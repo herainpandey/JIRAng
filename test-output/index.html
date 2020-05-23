@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\PCP\AppData\Local\Temp\testng-eclipse-576670048\testng-customsuite.xml</span>
+                    <span>C:\Users\PCP\AppData\Local\Temp\testng-eclipse--1030046890\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,6 +103,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="bdd.JiraJsonFramework.JiraScratchNG" hash-for-method="AddComment">AddComment</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="bdd.JiraJsonFramework.JiraScratchNG" hash-for-method="GetComment">GetComment</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -142,6 +147,13 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="GetComment">
+                  </a> <!-- GetComment -->
+                  <span class="method-name">GetComment</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="createIssue">
                   </a> <!-- createIssue -->
                   <span class="method-name">createIssue</span>
@@ -159,7 +171,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\PCP\AppData\Local\Temp\testng-eclipse-576670048\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\PCP\AppData\Local\Temp\testng-eclipse--1030046890\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -208,24 +220,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createIssue')
+data.setCell(0, 1, 'loginJira')
 data.setCell(0, 2, 'bdd.JiraJsonFramework.JiraScratchNG')
-data.setCell(0, 3, 5924);
+data.setCell(0, 3, 1904);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginJira')
+data.setCell(1, 1, 'createIssue')
 data.setCell(1, 2, 'bdd.JiraJsonFramework.JiraScratchNG')
-data.setCell(1, 3, 1762);
+data.setCell(1, 3, 1041);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'AddComment')
 data.setCell(2, 2, 'bdd.JiraJsonFramework.JiraScratchNG')
-data.setCell(2, 3, 66);
+data.setCell(2, 3, 375);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'GetComment')
+data.setCell(3, 2, 'bdd.JiraJsonFramework.JiraScratchNG')
+data.setCell(3, 3, 80);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -258,11 +274,15 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createIssue</span>
-                <span class="method-start">1770 ms</span>
+                <span class="method-start">1915 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">AddComment</span>
-                <span class="method-start">7697 ms</span>
+                <span class="method-start">2958 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">GetComment</span>
+                <span class="method-start">3335 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
