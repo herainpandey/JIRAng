@@ -10,7 +10,9 @@ import org.testng.annotations.Test;
 
 public class JiraScratchNG {
    SessionFilter session = new SessionFilter();
-	String newsession;
+	String id,key;
+	
+	
 	@Test(priority = 0)
 	public void loginJira()
 	{
@@ -24,9 +26,8 @@ public class JiraScratchNG {
 	@Test(priority = 1)
 	public void createIssue()
 	{
-		//System.out.println(newsession);
 		RestAssured.baseURI="http://localhost:8080";
-		given().header("Content-Type", "application/json")
+		String response = given().header("Content-Type", "application/json")
 		.body("{\r\n" + 
 				"    \"fields\": {\r\n" + 
 				"        \"project\": {\r\n" + 
@@ -43,31 +44,27 @@ public class JiraScratchNG {
 				"  \r\n" + 
 				"}")
 		.filter(session).when().post("/rest/api/2/issue")
-		.then().log().all().assertThat().statusCode(201);
+		.then().log().all().assertThat().statusCode(201).extract().response().asString();
+	
+    JsonPath js = new JsonPath(response);
+	id = js.getString("id");
+	key = js.getString("key");
+	
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 2)
 	public void AddComment()
 	{
-		//System.out.println(newsession);
 		RestAssured.baseURI="http://localhost:8080";
 		given().header("Content-Type", "application/json")
 		.body("{\r\n" + 
-				"    \"fields\": {\r\n" + 
-				"        \"project\": {\r\n" + 
-				"            \"key\": \"HPTES\"\r\n" + 
-				"        },\r\n" + 
-				"        \"summary\": \"This is my second issue\",\r\n" + 
-				"        \"issuetype\": {\r\n" + 
-				"            \"name\": \"Bug\"\r\n" + 
-				"        },\r\n" + 
-				"        \"reporter\": {\r\n" + 
-				"            \"name\": \"Himanshu\"\r\n" + 
-				"        }\r\n" + 
+				"    \"body\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper.\",\r\n" + 
+				"    \"visibility\": {\r\n" + 
+				"        \"type\": \"role\",\r\n" + 
+				"        \"value\": \"Administrators\"\r\n" + 
 				"    }\r\n" + 
-				"  \r\n" + 
 				"}")
-		.filter(session).when().post("/rest/api/2/issue/{{bug}}/comment")
+		.filter(session).when().post("/rest/api/2/issue/"+key+"/comment")
 		.then().log().all().assertThat().statusCode(201);
 	}
 
